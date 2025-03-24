@@ -137,3 +137,62 @@ h1 {
   /* text-align: center; */
 }
 
+@media (max-width: 500px) {
+  body {
+    margin-top: 20px;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  }
+
+  .app {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .counter {
+    width: 150px;
+    height: 40px;
+    font-size: 24px;
+  }
+
+  .top_controls {
+    width: 100%;
+    height: auto;
+    grid-template-rows: repeat(3, auto); 
+    gap: 10px;
+  }
+
+  .top-rub,
+  .top-money,
+  .top-total {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .top_controls img {
+    width: 80px;
+  }
+
+  .top_controls input {
+    width: 150px;
+    height: 22px;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .controls button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .moneyList {
+    height: 26px;
+    width: 100%;
+  }
+}
+
