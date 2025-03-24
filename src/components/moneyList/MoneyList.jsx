@@ -21,8 +21,8 @@ const MoneyList = ({nameMoney, selectedValue, setSelectedValue}) => {
           )})
     
     return (
-        <select name="money" onChange={handleSelectChange} value={selectedValue}>
-            <option value="">-- Выберите город --</option>
+        <select className='moneyList' name="money" onChange={handleSelectChange} value={selectedValue}>
+            <option value="">-- Выберите валюту --</option>
             {elements}
         </select>
     )

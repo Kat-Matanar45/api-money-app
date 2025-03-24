@@ -3,6 +3,10 @@ import { useState, useEffect } from 'react';
 import MoneyList from '../moneyList/MoneyList';
 import BlokInfo from '../blokInfo/BlokInfo';
 
+import exchangeImg from '../../../public/img/exchange1.png'
+import availabilityImg from '../../../public/img/availability.png'
+import receiveImg from '../../../public/img/receive.png'
+
 const View = ({nameMoney}) => {
 
     const [selectedValue, setSelectedValue] = useState("");
@@ -23,18 +27,30 @@ const View = ({nameMoney}) => {
 
     return (
       <>
+        <h1>Калькулятор обмена валют</h1>
         <div className="app">
           <div className="top_controls">
-            <label htmlFor='rub'>
+            {/* <label htmlFor='rub'>
               Введите сумму в рублях:  
-            </label>
-            <input id='rub' type='text' onChange={(e) => setRubInput(e.target.value)}/>
-          </div>
-          <div className="counter">
-            {counter}
+            </label> */}
+            <div className='top-rub'>
+                <img src={availabilityImg}/>
+                <input id='rub' type='text' onChange={(e) => setRubInput(e.target.value)}/>
+                <p>RUB</p>
+            </div>
+            <div className='top-money'>
+                <img src={exchangeImg}/>
+                <MoneyList nameMoney={nameMoney} selectedValue={selectedValue} setSelectedValue={setSelectedValue}/>
+            </div>
+            <div className='top-total'>
+                <img src={receiveImg}/>
+                <div className="counter">
+                  {counter}
+                </div>
+                <p>{selectedValue}</p>
+            </div>
           </div>
           <div className="controls">
-            <MoneyList nameMoney={nameMoney} selectedValue={selectedValue} setSelectedValue={setSelectedValue}/>
             <button disabled={isDisabled} onClick={() => calcCounter(selectedValue)}>Конвертировать</button>
           </div>
           {isDisabled ? <BlokInfo/> : null}
